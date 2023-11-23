@@ -1,0 +1,37 @@
+version: "3.1"
+
+nlu:
+  - intent: user_inquiry
+    examples: |
+      - Can you help me with a question?
+      - I have a query, can you assist?
+      - What do you know about this topic?
+      - I need information on a specific subject.
+
+  - intent: order_food
+    examples: |
+      - I want to order pizza.
+      - Can you help me with a food delivery?
+      - What are the menu options for tonight?
+      - Order sushi for me, please.
+
+  - intent: express_emotion
+    examples: |
+      - I'm feeling happy!
+      - Today is a great day.
+      - I feel a bit sad.
+      - Something wonderful happened.
+
+  - intent: suggest_movie
+    examples: |
+      - Recommend a good movie to watch.
+      - Any suggestions for a comedy film?
+      - What's a popular movie right now?
+      - Can you suggest a movie for a date night?
+
+  - intent: inquire_news
+    examples: |
+      - Tell me the latest news.
+      - What's happening in the world?
+      - Give me an update on current events.
+      - Any interesting headlines today?

@@ -1,0 +1,75 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+  - story: positive interaction
+    steps:
+      - user: |
+          hey, how's it going?
+        intent: greet
+      - action: utter_greet
+      - user: |
+          fantastic!
+        intent: mood_happy
+      - action: utter_happy_response
+
+  - story: positive interaction with goodbye
+    steps:
+      - user: |
+          hey, how's it going?
+        intent: greet
+      - action: utter_greet
+      - user: |
+          fantastic!
+        intent: mood_happy
+      - action: utter_happy_response
+      - user: |
+          see you later!
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: handling user dissatisfaction
+    steps:
+      - user: |
+          hi
+        intent: greet
+      - action: utter_greet
+      - user: |
+          not great
+        intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - user: |
+          not really
+        intent: deny
+      - action: utter_farewell
+
+  - story: addressing severe dissatisfaction
+    steps:
+      - user: |
+          hi
+        intent: greet
+      - action: utter_greet
+      - user: |
+          feeling terrible
+        intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - user: |
+          no
+        intent: deny
+      - action: utter_farewell
+
+  - story: polite farewell
+    steps:
+      - user: |
+          goodbye for now!
+        intent: goodbye
+      - action: utter_polite_goodbye
+
+  - story: challenging bot identity
+    steps:
+      - user: |
+          are you a human?
+        intent: bot_challenge
+      - action: utter_bot_challenge_response
